@@ -1,0 +1,200 @@
+<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01//EN' 'http://www.w3.org/TR/html4/strict.dtd'>
+<html>
+  <head>
+    <title>The JP Spot</title>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+    <link rel='stylesheet' type='text/css' href='style.css'>
+    <script type='text/javascript' src='jquery.js'></script>
+    <script type='text/javascript' src='jsgl.js'></script>
+    <script type='text/javascript' src='kdTree.js'></script>
+    <script type='text/javascript' src='js.js'></script>
+    <script type='text/javascript'>
+      var my_fader = new Fader();
+      var my_canvas = null;
+      var my_panel = null;
+
+      window.onhashchange = function() {
+        console.log('hash change');
+      }
+
+      window.onhashchange = function(e) {
+        e.preventDefault();
+        my_fader.load_page(window.location.hash);
+        return false;
+      }
+    </script>
+  </head>
+  <body onload='my_fader.load_body();'>
+    <table>
+      <tr>
+        <td>
+          <img id='logo1' class='logo' alt='the jp spot' src='thejpspot3.png'>
+          <img id='logo2' class='logo' alt='the jp spot' src='thejpspot1.png'>
+          <img id='logo3' class='logo' alt='the jp spot' src='thejpspot2.png'>
+          <img id='logo4' class='logo' alt='the jp spot' src='thejpspot4.png'> 
+          <div id='nav' class='center'> 
+            <p onclick="my_fader.load_page('#music');">Music</p>
+            <p onclick="my_fader.load_page('#code');">Code</p>
+            <p onclick="my_fader.load_page('#bio');">Bio</p>
+          </div>
+        </td>
+        <td>
+          <div id='main_' class='aux'>
+            <p>Click below to make some music.</p>
+            <div id='canvas'>
+            </div>
+            <script type='text/javascript'>
+              my_panel = new jsgl.Panel(document.getElementById('canvas'));
+              my_canvas = new PulseCanvas(my_panel);
+            </script>
+          </div>
+          <div id='music_' class='aux'>
+            <script type='text/javascript'>
+              $.ajax('music.html',
+                {
+                  success: function(data, textStatus, jqXHR)
+                  {
+                    $('#music_').html(data);
+                  }
+                }
+              );
+            </script>
+          </div>
+          <div id='code_' class='aux'>
+            <script type='text/javascript'>
+              $.ajax('code.html',
+                {
+                  success: function(data, textStatus, jqXHR)
+                  {
+                    $('#code_').html(data);
+                  }
+                }
+              );
+            </script>
+          </div>
+          <div id='bio_' class='aux'>
+            <script type='text/javascript'>
+              $.ajax('bio.html',
+                {
+                  success: function(data, textStatus, jqXHR)
+                  {
+                    $('#bio_').html(data);
+                  }
+                }
+              );
+            </script>
+          </div>
+          <div id='music1' class='aux'>
+            <script type='text/javascript'>
+              $.ajax('dontknowwhy.html',
+                {
+                  success: function(data, textStatus, jqXHR)
+                  {
+                    $('#music1').html(data);
+                  }
+                }
+              );
+            </script>
+          </div>
+          <div id='music2' class='aux'>
+            <script type='text/javascript'>
+              $.ajax('cs2c.html',
+                {
+                  success: function(data, textStatus, jqXHR)
+                  {
+                    $('#music2').html(data);
+                  }
+                }
+              );
+            </script>
+          </div>
+          <div id='music3' class='aux'>
+            <script type='text/javascript'>
+              $.ajax('toccata',
+                {
+                  success: function(data, textStatus, jqXHR)
+                  {
+                    $('#music3').html(data);
+                  }
+                }
+              );
+            </script>
+          </div>
+          <div id='music4' class='aux'>
+            <script type='text/javascript'>
+              $.ajax('snowdays.html',
+                {
+                  success: function(data, textStatus, jqXHR)
+                  {
+                    $('#music4').html(data);
+                  }
+                }
+              );
+            </script>
+          </div>
+          <div id='music5' class='aux'>
+            <script type='text/javascript'>
+              $.ajax('prelude.html',
+                {
+                  success: function(data, textStatus, jqXHR)
+                  {
+                    $('#music5').html(data);
+                  }
+                }
+              );
+            </script>
+          </div>
+          <div id='music6' class='aux'>
+            <script type='text/javascript'>
+              $.ajax('hashpipe.html',
+                {
+                  success: function(data, textStatus, jqXHR)
+                  {
+                    $('#music6').html(data);
+                  }
+                }
+              );
+            </script>
+          </div>
+          <div id='music7' class='aux'>
+            <script type='text/javascript'>
+              $.ajax('readymade.html',
+                {
+                  success: function(data, textStatus, jqXHR)
+                  {
+                    $('#music7').html(data);
+                  }
+                }
+              );
+            </script>
+          </div>
+          <div id='music8' class='aux'>
+            <script type='text/javascript'>
+              $.ajax('thosetimes.html',
+                {
+                  success: function(data, textStatus, jqXHR)
+                  {
+                    $('#music8').html(data);
+                  }
+                }
+              );
+            </script>
+          </div>
+          <div id='music9' class='aux'>
+            <script type='text/javascript'>
+              $.ajax('panfunk.html',
+                {
+                  success: function(data, textStatus, jqXHR)
+                  {
+                    $('#music9').html(data);
+                  }
+                }
+              );
+            </script>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
+
