@@ -1,0 +1,3 @@
+[submodule "calypso"]
+	path = calypso
+	url = git://github.com/jspotter/calypso
